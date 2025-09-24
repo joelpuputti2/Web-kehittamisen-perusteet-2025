@@ -1,0 +1,35 @@
+/*
+Author: Joel Puputti
+Date: 24.09.2025 
+*/
+
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: rgb(0, 84, 253);
+    font-size: 100px;
+}
+
+p {
+    color: darkred;
+}
+
+ul {
+    color: brown;
+    font-size: 20px;
+    font: 1em sans-serif;
+}
+
+ol {
+    color: darkorange;
+    font-size: 20px;
+    font: 1em sans-serif;
+}
+
+a {
+    color: darkgreen;
+    font-size: 20px;
+    font: 1em sans-serif;
+}
