@@ -16,13 +16,15 @@ p {
     color: darkred;
 }
 
-ul {
+ul li {
+    list-style-type: square;
     color: brown;
     font-size: 20px;
     font: 1em sans-serif;
 }
 
-ol {
+ol li {
+    list-style-type: decimal-leading-zero;
     color: darkorange;
     font-size: 20px;
     font: 1em sans-serif;
