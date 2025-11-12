@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Registeration page</title>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="index.js"></script>
+</head>
+
+<body class="m-0 bg-[#f6f8fb] font-sans text-md min-h-screen flex flex-col">
+  <!--
+    Author: Joel Puputti
+    Date: 9.11.2025
+  -->
+
+  <header class="hidden md:block sticky top-0 z-20 pt-6 md:pt-8 pb-3 md:pb-4 px-4 bg-[#273e73] text-white">
+    <h1 class="text-[1.6rem] m-0 text-center">Registeration page</h1>
+  </header>
+
+  <main class="flex-1 flex items-center justify-center w-full">
+    <div class="w-full max-w-4xl mx-auto px-4 md:px-0 pt-4 pb-44">
+    <!-- Top row split into two blocks -->
+  <div class="top-grid flex flex-col md:flex-row gap-4 mb-4 p-4">
+      <!-- Student info (30%) -->
+  <section class="student-info bg-white border border-[#d0d7e2] rounded-lg p-3 shadow-sm basis-full md:basis-1/3" aria-label="Student information">
+        <h2 class="student-info-title mb-2 text-lg font-semibold">Information</h2>
+        <p class="m-0"><span class="student-name">Joel Puputti</span></p>
+        <p class="mt-2"><span class="student-group">NTIS24K</span></p>
+      </section>
+
+      <!-- Controls (70%): add course + day marks -->
+      <section class="controls bg-white border border-[#d0d7e2] rounded-lg p-3 shadow-sm basis-full md:basis-2/3" aria-label="Add course row">
+        <h2 class="controls-title mb-2 text-lg font-semibold">Add person</h2>
+
+        <form id="addpersonForm" novalidate>
+          <div class="form-row flex flex-col md:flex-row gap-2 items-start md:items-center my-2">
+            <label for="fullName" class="w-full md:w-32 text-sm">Full name</label>
+            <input id="fullName" name="fullName" class="w-full md:flex-1 p-2 border border-[#d0d7e2] rounded-md" type="text" required placeholder="Full name" />
+            <p id="err-fullName" class="mt-1 text-sm text-red-600 hidden"></p>
+          </div>
+          <div class="form-row flex flex-col md:flex-row gap-2 items-start md:items-center my-2">
+            <label for="email" class="w-full md:w-32 text-sm">Email</label>
+            <input id="email" name="email" class="w-full md:flex-1 p-2 border border-[#d0d7e2] rounded-md" type="email" required placeholder="Email" />
+            <p id="err-email" class="mt-1 text-sm text-red-600 hidden"></p>
+          </div>
+          <div class="form-row flex flex-col md:flex-row gap-2 items-start md:items-center my-2">
+            <label for="phone" class="w-full md:w-32 text-sm">Phone Number</label>
+            <input id="phone" name="phone" class="w-full md:flex-1 p-2 border border-[#d0d7e2] rounded-md" type="text" required placeholder="Phone Number" />
+            <p id="err-phone" class="mt-1 text-sm text-red-600 hidden"></p>
+          </div>
+          <div class="form-row flex flex-col md:flex-row gap-2 items-start md:items-center my-2">
+            <label for="date" class="w-full md:w-32 text-sm">Birth date</label>
+            <input id="date" name="date" class="md:flex-none p-2 border border-[#d0d7e2] rounded-md" type="date" required/>
+            <p id="err-date" class="mt-1 text-sm text-red-600 hidden"></p>
+
+          </div>
+          <div class="form-row my-2">
+            <label class="inline-flex items-center gap-2"><input id="accept" type="checkbox" value="accept" required class="form-checkbox"/> Accept Terms</label>
+            <p id="err-accept" class="mt-1 text-sm text-red-600 hidden"></p>
+          </div>
+          <div class="form-row flex flex-col md:flex-row gap-2 mt-3">
+            <button id="addRowBtn" type="submit" class="w-full md:w-auto px-3 py-2 border rounded-md bg-[#f8fafc] hover:bg-[#eef2f7] font-semibold">Add row</button>
+            <button id="clearBtn" type="reset" class="w-full md:w-auto px-3 py-2 border rounded-md bg-white hover:bg-[#eef2f7]">Clear</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap bg-white border border-[#d0d7e2] rounded-lg p-4 overflow-x-auto shadow-sm">
+      <table class="w-full border-collapse divide-y divide-[#d0d7e2]" id="timetable">
+        <thead>
+          <tr>
+            <th class="bg-[#273e73] text-white text-left px-3 py-2 border-b">Timestamp</th>
+            <th class="bg-[#273e73] text-white text-left px-3 py-2 border-b">Full name</th>
+            <th class="bg-[#273e73] text-white text-left px-3 py-2 border-b">Email</th>
+            <th class="bg-[#273e73] text-white text-left px-3 py-2 border-b">Phone number</th>
+            <th class="bg-[#273e73] text-white text-left px-3 py-2 border-b">Date</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white"></tbody>
+      </table>
+    </div>
+  </div>
+  </main>
+</body>
+
+</html>
