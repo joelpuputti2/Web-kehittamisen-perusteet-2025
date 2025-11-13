@@ -48,7 +48,7 @@
               <input
                 id="email"
                 name="email"
-                type="text"
+                type="email"
                 required
                 placeholder="Email"
                 oninvalid="this.setCustomValidity('Kirjoita sähköpostisi tähän kenttään')"
@@ -59,10 +59,11 @@
               <input
                 id="phone"
                 name="phone"
-                type="text"
+                type="tel"
+                minlength="10"
                 required
                 placeholder="Phone Number"
-                oninvalid="this.setCustomValidity('Kirjoita puhelinnumerosi tähän kenttään')"
+                oninvalid="this.setCustomValidity('Puhelinnumerosi tulee olla vähintään 10 merkkiä pitkä')"
                 oninput="this.setCustomValidity('')"/>
             </div>
             <div class="form-row">
