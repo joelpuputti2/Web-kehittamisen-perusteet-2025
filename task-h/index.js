@@ -54,8 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
       showError('err-email', 'Anna kelvollinen sähköpostiosoite');
       firstInvalid = firstInvalid || document.getElementById('email');
     }
-    if (!phone) {
-      showError('err-phone', 'Kirjoita puhelinnumerosi tähän kenttään');
+    if (!phone || phone.length < 10) {
+      showError('err-phone', 'Puhelinnumerosi tulee olla vähintään 10 merkkiä pitkä');
       firstInvalid = firstInvalid || document.getElementById('phone');
     }
     if (!date) {
