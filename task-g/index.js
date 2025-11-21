@@ -16,6 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const phone = (form.elements["phone"]?.value || "").trim();
     const date = form.elements["date"]?.value || "";
 
+    const dateInput = form.elements["date"];
+    if (date > new Date().toISOString().split("T")[0]) {
+      dateInput?.setCustomValidity("Syntymäaikasi ei voi olla tulevaisuudessa!.");
+      dateInput?.reportValidity();
+      return;
+    } else {
+      dateInput?.setCustomValidity("");
+    }
 
     // Create row values: timestamp + form fields
     const timestamp = new Date().toLocaleString();
