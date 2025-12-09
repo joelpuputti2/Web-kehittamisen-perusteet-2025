@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vuokra-autot — Kokkola Rent-a-Car</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Koti</a>
+        <a href="index.html#about" class="nav-link">Meistä</a>
+        <a href="catalog.html" class="nav-link" aria-current="page"
+          >Vuokra-autot</a
+        >
+        <a href="index.html#contact" class="nav-link">Yhteystiedot</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Intro -->
+      <section class="section container" aria-labelledby="catalog-intro">
+        <h1 id="catalog-intro">Vuokra-autot</h1>
+        <p class="muted">
+          Valitse laajasta valikoimastamme henkilöautoja ja pakettiautoja —
+          päivähinnat ja viikkohinnat näkyvät kunkin kohteen kohdalla.
+        </p>
+        <p>
+          Vuokrauksen voit tehdä helposti ottamalla meihin yhteyttä puhelimitse
+          tai sähköpostitse.
+        </p>
+      </section>
+
+      <!-- Product grid (min 6 items) -->
+      <section id="products" class="section products">
+        <div class="container">
+          <h2>Esittelyautot</h2>
+          <div class="card-grid" role="list">
+            <article class="card" role="listitem">
+              <img
+                src="./Images/car1.webp"
+                alt="Volvo S90"
+                width="1600"
+                height="900"
+                loading="eager"
+              />
+              <div class="card-body">
+                <h3>Volvo S90</h3>
+                <p>
+                  Luksusmallin henkilöauto — mukava ja hiljainen ajokokemus.
+                </p>
+                <div class="price"><b>69€/päivä · 369€/viikko</b></div>
+              </div>
+            </article>
+
+            <article class="card" role="listitem">
+              <img
+                src="./Images/car2.webp"
+                alt="Volvo V90"
+                width="1600"
+                height="900"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>Farmari</h3>
+                <p>Tilava farmariauto perheille ja pidemmille matkoille.</p>
+                <div class="price"><b>79€/päivä · 449€/viikko</b></div>
+              </div>
+            </article>
+
+            <article class="card" role="listitem">
+              <img
+                src="./Images/car3.png"
+                alt="Pakettiauto takaovi auki"
+                width="1600"
+                height="900"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>Pakettiauto 3.5t</h3>
+                <p>Tilaa lastille ja tavaroille — hyvä valinta muuttoon.</p>
+                <div class="price"><b>79€/päivä · 449€/viikko</b></div>
+              </div>
+            </article>
+
+            <article class="card" role="listitem">
+              <img
+                src="./Images/car4.png"
+                alt="Pieni kaupunkiauto edestä"
+                width="1600"
+                height="900"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>City</h3>
+                <p>Pieni ja taloudellinen kaupunkiauto — helppo parkkeerata.</p>
+                <div class="price"><b>39€/päivä · 199€/viikko</b></div>
+              </div>
+            </article>
+
+            <article class="card" role="listitem">
+              <img
+                src="./Images/car5.png"
+                alt="Maastoauto rannikolla"
+                width="1600"
+                height="900"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>SUV</h3>
+                <p>
+                  Vahva ja turvallinen monipuoliseen maastoon ja perheen
+                  kesäreissuille.
+                </p>
+                <div class="price"><b>89€/päivä · 499€/viikko</b></div>
+              </div>
+            </article>
+
+            <article class="card" role="listitem">
+              <img
+                src="./Images/car6.png"
+                alt="Muuttokuormaauto"
+                width="1600"
+                height="900"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>Muuttoauto</h3>
+                <p>
+                  Isomman muuton avuksi tai tavaroiden kuljettamiseen. (Huom
+                  C-kortti vaaditaan)
+                </p>
+                <div class="price"><b>99€/päivä · 549€/viikko</b></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video section -->
+      <section class="section container" aria-labelledby="video-section">
+        <h2 id="video-section">Tutustu videoon</h2>
+
+        <figure>
+          <video
+            controls
+            playsinline
+            width="1280"
+            height="720"
+            poster="./Media/logo.png"
+            class="video-player"
+          >
+            <source src="./Media/showcase-video.webm" type="video/webm" />
+            <source src="./Media/showcase-video.mp4" type="video/mp4" />
+            Valitse selaimesta yhteensopiva versio nähdäksesi videon.
+          </video>
+          <figcaption class="muted">Video: esittely (kesto n. 18s)</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <!-- Footer (matching landing page) -->
+    <footer id="contact" class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Kokkola Rent-a-Car</h3>
+          <p>Koulukatu 10, Kokkola</p>
+          <p>Puhelin: 012 345 6789</p>
+          <p>Email: kokkolarentacar@gmail.com</p>
+        </div>
+        <div>
+          <h4>Nopeat linkit</h4>
+          <nav>
+            <a href="index.html#about">Meistä</a><br />
+            <a href="catalog.html#products">Vuokra-autot</a><br />
+            <a href="index.html#contact">Yhteystiedot</a>
+          </nav>
+        </div>
+        <div>
+          <h4>Seuraa meitä</h4>
+          <p>Facebook · Instagram · Twitter</p>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Kokkola Rent-a-Car</div>
+    </footer>
+  </body>
+</html>

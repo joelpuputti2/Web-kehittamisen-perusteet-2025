@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Kokkola Rent-a-Car - Order</title>
+</head>
+<body>
+    <header class="site-header">
+      <nav class="site-nav">
+        <a href="#" class="nav-link">Koti</a>
+        <a href="#about" class="nav-link">Meistä</a>
+        <a href="catalog.html" class="nav-link">Vuokra-autot</a>
+        <a href="#contact" class="nav-link">Yhteystiedot</a>
+      </nav>
+    </header>
+
+    <section id="order" class="section order">
+        <div class="container">
+            <h2>Varaa vuokra-auto</h2>
+            <form action="#" method="post" class="order-form
+">
+                <label for="name">Nimi:</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Sähköposti:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone">Puhelin:</label>
+                <input type="tel" id="phone" name="phone" required />
+
+                <label for="car-model">Auton malli:</label>
+                <select id="car-model" name="car-model" required>
+                    <option value="">Valitse malli</option>
+                    <option value="volvo-s90">Volvo S90</option>
+                    <option value="audi-a6">Audi A6</option>
+                    <option value="ford-transit">Ford Transit</option>
+                </select>
+
+                <label for="rental-dates">Vuokrausajat:</label>
+                <input type="text" id="rental-dates" name="rental-dates" placeholder="DD/MM/YYYY - DD/MM/YYYY" required />
+
+                <button type="submit" class="cta">Varaa nyt</button>
+            </form>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer id="contact" class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Kokkola Rent-a-Car</h3>
+          <p>Koulukatu 10, Kokkola</p>
+          <p>Puhelin: 012 345 6789</p>
+          <p>Email: kokkolarentacar@gmail.com</p>
+        </div>
+        <div>
+          <h4>Nopeat linkit</h4>
+          <nav>
+            <a href="#about">Meistä</a><br />
+            <a href="catalog.html">Vuokra-autot</a><br />
+            <a href="#contact">Yhteystiedot</a>
+          </nav>
+        </div>
+        <div>
+          <h4>Seuraa meitä</h4>
+          <p>Facebook · Instagram · Twitter</p>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Kokkola Rent-a-Car</div>
+    </footer>
+</body>
+</html>
