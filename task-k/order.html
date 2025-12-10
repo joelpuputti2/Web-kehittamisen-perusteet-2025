@@ -1,52 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Kokkola Rent-a-Car - Order</title>
-</head>
-<body>
+    <title>Kokkola Rent-a-Car - Varaa</title>
+  </head>
+  <body>
     <header class="site-header">
       <nav class="site-nav">
-        <a href="#" class="nav-link">Koti</a>
-        <a href="#about" class="nav-link">Meistä</a>
-        <a href="catalog.html" class="nav-link">Vuokra-autot</a>
-        <a href="#contact" class="nav-link">Yhteystiedot</a>
+        <a href="index.html" class="nav-link">Koti</a>
+        <a href="catalog.html" class="nav-link">Kalustomme</a>
+        <a href="order.html" class="nav-link">Vuokraa auto</a>
       </nav>
     </header>
 
-    <section id="order" class="section order">
+    <main>
+      <section id="order" class="section order">
         <div class="container">
-            <h2>Varaa vuokra-auto</h2>
-            <form action="#" method="post" class="order-form
-">
-                <label for="name">Nimi:</label>
-                <input type="text" id="name" name="name" required />
+          <h1>Varaa vuokra-auto</h1>
+          <p class="muted">
+            Täytä yhteystiedot ja varauksen tiedot. Pakolliset kentät on
+            merkitty tähdellä *
+          </p>
 
-                <label for="email">Sähköposti:</label>
-                <input type="email" id="email" name="email" required />
+          <form
+            id="rentalForm"
+            action="#"
+            method="post"
+            class="order-form"
+            novalidate
+          >
+            <!-- Customer information -->
+            <fieldset>
+              <legend>Asiakastiedot</legend>
 
-                <label for="phone">Puhelin:</label>
-                <input type="tel" id="phone" name="phone" required />
+              <label for="fullname">Koko nimi *</label>
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                required
+                minlength="2"
+              />
+              <div
+                class="error-message"
+                id="fullname-error"
+                aria-live="polite"
+              ></div>
 
-                <label for="car-model">Auton malli:</label>
-                <select id="car-model" name="car-model" required>
-                    <option value="">Valitse malli</option>
-                    <option value="volvo-s90">Volvo S90</option>
-                    <option value="audi-a6">Audi A6</option>
-                    <option value="ford-transit">Ford Transit</option>
-                </select>
+              <label for="email">Sähköposti *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="etunimi.sukunimi@example.fi"
+              />
+              <div
+                class="error-message"
+                id="email-error"
+                aria-live="polite"
+              ></div>
 
-                <label for="rental-dates">Vuokrausajat:</label>
-                <input type="text" id="rental-dates" name="rental-dates" placeholder="DD/MM/YYYY - DD/MM/YYYY" required />
+              <label for="phone">Puhelin *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                pattern="^\+?[\d\s\-]{5,15}$"
+                placeholder="+358 40 123 4567"
+              />
+              <div
+                class="error-message"
+                id="phone-error"
+                aria-live="polite"
+              ></div>
+            </fieldset>
 
-                <button type="submit" class="cta">Varaa nyt</button>
-            </form>
+            <!-- Rental details -->
+            <fieldset>
+              <legend>Vuokraustiedot</legend>
+
+              <label for="item">Valitse auto *</label>
+              <select id="item" name="item" required>
+                <option value="">Valitse malli</option>
+                <option value="volvo-s90">Volvo S90</option>
+                <option value="volvo-v90">Farmari</option>
+                <option value="pakettiauto-3.5t">Pakettiauto 3.5t</option>
+                <option value="city">City</option>
+                <option value="maastoauto">SUV</option>
+                <option value="perhepaketti">Muuttoauto</option>
+              </select>
+              <div
+                class="error-message"
+                id="item-error"
+                aria-live="polite"
+              ></div>
+
+              <label for="start-date">Aloituspäivä *</label>
+              <input type="date" id="start-date" name="start-date" required />
+              <div
+                class="error-message"
+                id="start-date-error"
+                aria-live="polite"
+              ></div>
+
+              <label for="end-date">Päättymispäivä *</label>
+              <input type="date" id="end-date" name="end-date" required />
+              <div
+                class="error-message"
+                id="end-date-error"
+                aria-live="polite"
+              ></div>
+            </fieldset>
+
+            <!-- Additional info & consent -->
+            <fieldset>
+              <legend>Lisätiedot</legend>
+
+              <label for="message">Lisätiedot / erityistoiveet</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Esim. lastenistuin, lisäkuljettaja, noutoaika..."
+              ></textarea>
+
+              <label class="checkbox">
+                <input type="checkbox" id="terms" name="terms" required />
+                Hyväksyn vuokrausehdot ja tietosuojaselosteen *
+              </label>
+              <div
+                class="error-message"
+                id="terms-error"
+                aria-live="polite"
+              ></div>
+              <div class="form-actions">
+                <button type="submit" class="cta">Lähetä varauspyyntö</button>
+              </div>
+            </fieldset>
+          </form>
         </div>
-    </section>
+      </section>
+    </main>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer id="contact" class="site-footer">
       <div class="container footer-grid">
         <div>
@@ -58,9 +158,9 @@
         <div>
           <h4>Nopeat linkit</h4>
           <nav>
-            <a href="#about">Meistä</a><br />
+            <a href="index.html#about">Meistä</a><br />
             <a href="catalog.html">Vuokra-autot</a><br />
-            <a href="#contact">Yhteystiedot</a>
+            <a href="index.html#contact">Yhteystiedot</a>
           </nav>
         </div>
         <div>
@@ -70,5 +170,86 @@
       </div>
       <div class="footer-bottom">© 2025 Kokkola Rent-a-Car</div>
     </footer>
-</body>
+
+    <script>
+      /* Small client-side helpers:
+   - set min dates to today
+   - ensure end-date >= start-date
+   - show simple custom error messages and highlights
+*/
+      (function () {
+        const today = new Date().toISOString().split("T")[0];
+        const start = document.getElementById("start-date");
+        const end = document.getElementById("end-date");
+        const form = document.getElementById("rentalForm");
+
+        if (start) start.min = today;
+        if (end) end.min = today;
+
+        function setError(input, msg) {
+          const el = document.getElementById(input.id + "-error");
+          if (el) el.textContent = msg;
+          input.classList.toggle("invalid", !!msg);
+        }
+
+        // Validate date relationship
+        function validateDates() {
+          if (!start.value || !end.value) {
+            setError(end, "");
+            return true;
+          }
+          if (end.value < start.value) {
+            setError(
+              end,
+              "Paluu-/päättymispäivä ei voi olla ennen aloituspäivää."
+            );
+            return false;
+          } else {
+            setError(end, "");
+            return true;
+          }
+        }
+
+        start.addEventListener("change", function () {
+          if (end) end.min = start.value || today;
+          validateDates();
+        });
+
+        end.addEventListener("change", validateDates);
+
+        // Generic field validation on input
+        form.querySelectorAll("input, select, textarea").forEach((field) => {
+          field.addEventListener("input", () => setError(field, ""));
+          field.addEventListener("invalid", (e) => {
+            e.preventDefault();
+            if (field.validity.valueMissing)
+              setError(field, "Tämä kenttä on pakollinen.");
+            else if (field.validity.typeMismatch)
+              setError(field, "Syötä kelvollinen arvo.");
+            else if (field.validity.patternMismatch)
+              setError(field, "Muoto ei kelpaa.");
+            else setError(field, "Tarkista kentän arvo.");
+          });
+        });
+
+        form.addEventListener("submit", function (e) {
+          // clear previous
+          let valid = form.checkValidity() && validateDates();
+          if (!valid) {
+            e.preventDefault();
+            // trigger native invalid events to populate messages
+            form.querySelectorAll("input, select, textarea").forEach((f) => {
+              if (!f.checkValidity()) {
+                f.reportValidity(); // helps show native tips in some browsers
+                f.dispatchEvent(new Event("invalid", { bubbles: true }));
+              }
+            });
+            if (!validateDates()) (end || start).focus();
+          } else {
+            // allow submit; optionally show a friendly message or proceed via AJAX
+          }
+        });
+      })();
+    </script>
+  </body>
 </html>
